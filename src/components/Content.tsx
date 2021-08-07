@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
 import { MovieCard } from "./MovieCard";
+import { Header } from "./Header";
 
 import "../styles/content.scss";
 
@@ -42,12 +43,7 @@ export function Content({ selectedGenreId }: IContentProps) {
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
       <div className="container">
-        <header>
-          <span className="category">
-            Categoria:<span> {selectedGenre.title}</span>
-          </span>
-        </header>
-
+        <Header category={selectedGenre.title} />
         <main>
           <div className="movies-list">
             {movies.map((movie) => (
